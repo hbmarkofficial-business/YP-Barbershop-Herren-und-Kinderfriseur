@@ -10,51 +10,57 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Kontakt & Termin | L&R Friseur Braunschweig</title>
+        <title>Kontakt & Termin | The Gentleman's Cut Berlin</title>
         <meta 
           name="description" 
-          content="Kontaktieren Sie L&R Friseur in Braunschweig. Vereinbaren Sie Ihren Termin über unseren Chatbot oder rufen Sie uns an. Mo-Fr 09-18 Uhr." 
+          content="Kontaktieren Sie The Gentleman's Cut in Berlin. Vereinbaren Sie Ihren Termin über unseren Chatbot oder rufen Sie uns an. Mo-Fr 09-20 Uhr, Sa 10-18 Uhr." 
         />
         <link rel="canonical" href="https://gentlemanscut.de/kontakt" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Barbershop",
-            "@id": "https://gentlemanscut.de/#barbershop",
-            "name": "L&R Friseur",
-            "url": "https://gentlemanscut.de",
-            "logo": "https://gentlemanscut.de/images/logo.png",
-            "image": "https://gentlemanscut.de/images/shop.jpg",
-            "telephone": "01789692057",
+            "@id": "https://example-barbershop.at/#barbershop",
+            "name": "Beispiel Barbershop Wien",
+            "url": "https://example-barbershop.at",
+            "logo": "https://example-barbershop.at/images/logo.png",
+            "image": "https://example-barbershop.at/images/shop.jpg",
+            "telephone": "+43 1 2345678",
             "priceRange": "€€",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Lehmweg 5",
-              "addressLocality": "Braunschweig",
-              "postalCode": "38126",
-              "addressCountry": "DE"
+              "streetAddress": "Musterstraße 12",
+              "addressLocality": "Wien",
+              "postalCode": "1020",
+              "addressCountry": "AT"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "52.2612",
-              "longitude": "10.5195"
+              "latitude": "48.2167",
+              "longitude": "16.3958"
             },
             "areaServed": {
               "@type": "AdministrativeArea",
-              "name": "Braunschweig"
+              "name": "Wien"
             },
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
-                "closes": "18:00"
+                "closes": "19:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "17:00"
               }
             ],
             "sameAs": [
-              "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19538.49643123623!2d10.5323299347656!3d52.25587818625088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aff5265640b649%3A0xa34ce328396636fb!2sYP%20Barbershop%20Herren%20und%20Kinderfriseur!5e0!3m2!1sde!2sde!4v1772218714569!5m2!1sde!2sde",
-              "https://www.instagram.com/lrfriseur",
-              "https://www.facebook.com/lrfriseur"
+              "https://www.google.com/maps?cid=1234567890",
+              "https://www.instagram.com/beispielbarbershop",
+              "https://www.facebook.com/beispielbarbershop"
             ]
           })}
         </script>
@@ -90,6 +96,8 @@ const Contact = () => {
         <section className="py-24 bg-charcoal">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Reihenfolge für Desktop: Chatbot links, Kontakt rechts
+                  Reihenfolge für Mobile: Chatbot oben, Kontakt unten */}
               <AnimateOnScroll animation="slide-left" className="order-1 lg:order-1">
                 <div className="bg-card border border-border rounded-sm p-8 md:p-10 h-fit">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
@@ -137,6 +145,7 @@ const Contact = () => {
                     </a>
                   </div>
 
+                  {/* Alternative Buchung Block */}
                   <div className="mt-8 pt-8 border-t border-border">
                     <p className="text-muted-foreground text-center mb-6 leading-relaxed">
                       Alternativ können Sie direkt hier die Verfügbarkeit Ihres Wunschtermins prüfen oder einen Termin buchen:
@@ -211,7 +220,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">E-Mail</h3>
                         <a 
-                          href="mailto:info@mustershop.de" 
+                          href="mailto:info@gentlemanscut.de" 
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           info@mustershop.de
@@ -227,6 +236,7 @@ const Contact = () => {
                         <h3 className="font-semibold text-foreground mb-1">Öffnungszeiten</h3>
                         <ul className="text-muted-foreground space-y-1 text-sm">
                           <li>Mo - Fr: 9:00 - 18:00</li>
+                          
                           <li>Samstag - Sonntag: Geschlossen</li>
                         </ul>
                       </div>
@@ -242,7 +252,7 @@ const Contact = () => {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Standort L&R Friseur"
+                      title="Standort The Gentleman's Cut"
                     />
                   </div>
                 </div>
